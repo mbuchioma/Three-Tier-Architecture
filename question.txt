@@ -2,3 +2,5 @@
 I got the error that the .terraform file is too large and cannot be pushed into github\
 git filter-branch -f --index-filter 'git rm --cached -r --ignore-unmatch .terraform/'
 After running this command, the .terraform file dissappeared but this worked
+
+I launched a VPC and they said it was tainted and needs to be removed what does that mean??
