@@ -7,3 +7,6 @@ I launched a VPC and they said it was tainted and needs to be removed what does 
 
 How do i create a default route for the internet gateway while creating the route table?
 Must i create routes as a seperate resource or can i integrate them in the routte table
+In creating the NAT gateway what if i want to create just one but have to loop through count for the subnetID what do I do
+I am not sure why my code is creating only one NAT gateway.
+#Why Should be destination everywhere for the private route
