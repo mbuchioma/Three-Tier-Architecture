@@ -7,6 +7,13 @@ resource "aws_route_table" "pub_rt" {
   }
 }
 
+resource "aws_route_table_association" "pub_sub_rt_association" {
+    count = length(aws_subnet.pub_sub)
+    #Got the * online I do not know what it means
+  subnet_id      = aws_subnet.pub_sub.*.id[count.index]
+  route_table_id = aws_route_table.pub_rt.id
+}
+
 # resource "aws_route_table_association" "pub_rt_association" {
 #   subnet_id      = aws_subnet.pub_sub.id[index]
 #   route_table_id = aws_route_table.pub_route_table.id

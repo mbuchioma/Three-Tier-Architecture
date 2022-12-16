@@ -4,3 +4,6 @@ git filter-branch -f --index-filter 'git rm --cached -r --ignore-unmatch .terraf
 After running this command, the .terraform file dissappeared but this worked
 
 I launched a VPC and they said it was tainted and needs to be removed what does that mean??
+
+How do i create a default route for the internet gateway while creating the route table?
+Must i create routes as a seperate resource or can i integrate them in the routte table
