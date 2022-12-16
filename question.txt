@@ -1,0 +1,4 @@
+# What does this command mean
+I got the error that the .terraform file is too large and cannot be pushed into github\
+git filter-branch -f --index-filter 'git rm --cached -r --ignore-unmatch .terraform/'
+After running this command, the .terraform file dissappeared but this worked
