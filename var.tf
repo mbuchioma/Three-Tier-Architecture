@@ -12,3 +12,8 @@ variable "pub_cidr" {
     type = list(string)
   
 }
+
+variable "az" {
+    type = list(string)
+  
+}

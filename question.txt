@@ -13,3 +13,4 @@ I am not sure why my code is creating only one NAT gateway.
 
 I am stuck in directing load balancer traffic to the private subnet that has the ecc2 instances.
 I do not know if I have to create a subnet group or if when I add them to a SG it can suffice.
+How do i not hardcode ami's
