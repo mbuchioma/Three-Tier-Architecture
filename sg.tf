@@ -86,16 +86,15 @@ resource "aws_security_group" "app_tier_sg" {
   }
 }
 
-#Configure Application Tier SG
+#Configure Database Tier SG
 resource "aws_security_group" "db_tier_sg" {
   name        = "db-tier-sg"
-  description = "Allows http from inbound app-tier"
+  description = "Allows mysql inbound traffic from app-tier"
   vpc_id      = aws_vpc.main_vpc.id
 
   ingress {
-    description      = "Allow http traffic from application tier"
-    from_port        = 80
-    to_port          = 80
+    from_port        = 3306
+    to_port          = 3306
     protocol         = "tcp"
     security_groups = [aws_security_group.app_tier_sg.id]
   }
@@ -112,5 +111,30 @@ resource "aws_security_group" "db_tier_sg" {
 
   tags = {
     Name = "db-tier-sg"
+  }
+}
+
+
+#Configuring an aws db subnet group
+# What is the role of creating a database subnet group
+resource "aws_db_subnet_group" "my_db_subnet-group" {
+  name       = "db-subnet-group"
+  #How can i list in a better way if it has to be multiple DB subnet groups instances
+  subnet_ids = [aws_subnet.priv_sub[2].id, aws_subnet.priv_sub[3].id]
+
+  tags = {
+    Name = "My DB subnet group"
+  }
+}
+
+#Configuring an aws application subnet group
+# What is the role of creating a database subnet group
+resource "aws_db_subnet_group" "my_app_subnet-group" {
+  name       = "app-subnet-group"
+  #How can i list in a better way if it has to be multiple DB subnet groups instances
+  subnet_ids = [aws_subnet.priv_sub[0].id, aws_subnet.priv_sub[1].id]
+
+  tags = {
+    Name = "My App subnet group"
   }
 }
