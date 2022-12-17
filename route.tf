@@ -38,15 +38,15 @@ resource "aws_route_table_association" "priv_sub_rt_association" {
   subnet_id      = aws_subnet.priv_sub.*.id[count.index]
   route_table_id = aws_route_table.priv_rt.id
 }
+# Got an error that the route already existed so commented this out to see what happens
+# resource "aws_route" "default_priv_route" {
+#     count = length(aws_nat_gateway.my_nat)
+#   route_table_id            = aws_route_table.priv_rt.id
+#   #Why Should be destination everywhere for 
+#   nat_gateway_id = aws_nat_gateway.my_nat.*.id[count.index]
+#   destination_cidr_block    = "0.0.0.0/0"
 
-resource "aws_route" "default_priv_route" {
-    count = length(aws_nat_gateway.my_nat)
-  route_table_id            = aws_route_table.priv_rt.id
-  #Why Should be destination everywhere for 
-  nat_gateway_id = aws_nat_gateway.my_nat.*.id[count.index]
-  destination_cidr_block    = "0.0.0.0/0"
-
-}
+# }
 
 
 

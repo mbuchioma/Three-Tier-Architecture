@@ -129,12 +129,13 @@ resource "aws_db_subnet_group" "my_db_subnet-group" {
 
 #Configuring an aws application subnet group
 # What is the role of creating a database subnet group
-resource "aws_db_subnet_group" "my_app_subnet-group" {
-  name       = "app-subnet-group"
-  #How can i list in a better way if it has to be multiple DB subnet groups instances
-  subnet_ids = [aws_subnet.priv_sub[0].id, aws_subnet.priv_sub[1].id]
+#created and realised that subnet group for instances has no command in terraform
+# resource "aws_db_subnet_group" "my_app_subnet-group" {
+#   name       = "app-subnet-group"
+#   #How can i list in a better way if it has to be multiple DB subnet groups instances
+#   subnet_ids = [aws_subnet.priv_sub[0].id, aws_subnet.priv_sub[1].id]
 
-  tags = {
-    Name = "My App subnet group"
-  }
-}
+#   tags = {
+#     Name = "My App subnet group"
+#   }
+# }
