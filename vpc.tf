@@ -28,6 +28,7 @@ resource "aws_nat_gateway" "my_nat" {
     count = 2
   allocation_id = aws_eip.my_eip.*.id[count.index]
   subnet_id     = aws_subnet.pub_sub.*.id[count.index]
+  
 
   tags = {
     Name = "my_NAT_gw ${count.index+1}"

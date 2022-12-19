@@ -1,0 +1,9 @@
+#Ignore the .terraform file
+**/.terraform/*
+
+#Ignore the state file
+*.tfstate
+
+#Ignore the .tfvars file
+*.tfvars
+*.tfvars.json
