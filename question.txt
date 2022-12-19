@@ -11,6 +11,10 @@ In creating the NAT gateway what if i want to create just one but have to loop t
 I am not sure why my code is creating only one NAT gateway.
 #Why Should be destination everywhere for the private route
 
+
 I am stuck in directing load balancer traffic to the private subnet that has the ecc2 instances.
 I do not know if I have to create a subnet group or if when I add them to a SG it can suffice.
 How do i not hardcode ami's
+
+In production environment which is best terraform practise. 
+Using outputs or using a tfvars file to store variable
