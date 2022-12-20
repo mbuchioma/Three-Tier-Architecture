@@ -4,6 +4,5 @@
 #Ignore the state file
 *.tfstate
 
-#Ignore the .tfvars file
-*.tfvars
-*.tfvars.json
+#Ignore the lock file
+.terraform.lock.hcl
